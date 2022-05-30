@@ -39,13 +39,24 @@ main {
 	gap: 2rem;
 	justify-content: center;
 	height: 100vh;
+	@include respond(small) {
+		padding: 8vw;
+		gap: 3rem;
+		align-items: center;
+		header {
+			text-align: center;
+			h1 {
+				margin: 0 0 3rem;
+			}
+		}
+	}
 	padding: 3.5rem;
 	color: $primary;
 	background-color: rgba(0, 0, 0, 0.4);
 	header {
 		margin-top: 25vh;
 		h1 {
-			font-size: calc(3.5rem + 0.5vw);
+			font-size: calc(3rem + 0.75vw);
 			margin: 0 0 2rem;
 		}
 
@@ -56,11 +67,19 @@ main {
 	nav {
 		display: flex;
 		align-items: center;
+		@include respond(small) {
+			gap: 8vw;
+			svg {
+				width: 8vw;
+				height: 8vw;
+				font-size: 8vw;
+			}
+		}
 		gap: 3rem;
 		svg {
-			width: 2.5rem;
-			height: 2.5rem;
-			font-size: 2.5rem;
+			width: 3rem;
+			height: 3rem;
+			font-size: 3rem;
 			path {
 				fill: $primary;
 				@include transition();
