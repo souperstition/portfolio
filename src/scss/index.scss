@@ -1,0 +1,90 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	font-size: 18px;
+	font-family: $font-family;
+	@include transition(background-image, 3000ms);
+	background-size: cover;
+}
+
+.preload {
+	-moz-animation: none !important;
+	-webkit-animation: none !important;
+	-ms-animation: none !important;
+	animation: none !important;
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+	height: 100vh;
+	padding: 3.5rem;
+	color: $primary;
+	background-color: rgba(0, 0, 0, 0.4);
+	header {
+		margin-top: 25vh;
+		h1 {
+			font-size: calc(3.5rem + 0.5vw);
+			margin: 0 0 2rem;
+		}
+
+		p {
+			font-size: 1.25rem;
+		}
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+		svg {
+			width: 2.5rem;
+			height: 2.5rem;
+			font-size: 2.5rem;
+			path {
+				fill: $primary;
+				@include transition();
+			}
+		}
+
+		svg:hover {
+			cursor: pointer;
+		}
+
+		svg:hover path {
+			fill: $secondary;
+		}
+	}
+	footer {
+		font-size: 1rem;
+		margin-top: auto;
+		a {
+			color: $primary;
+			@include transition();
+		}
+
+		a:hover {
+			color: $secondary;
+		}
+	}
+}
