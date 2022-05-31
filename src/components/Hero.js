@@ -35,7 +35,7 @@ const Hero = () => {
 	return (
 		<main>
 			<header>
-				<h1>what will we dream up together?</h1>
+				<h1>what will we dream up today?</h1>
 				<p>I develop stuff for e-learning and the web. Feel free to get in touch or browse my work: </p>
 			</header>
 			<Nav />
