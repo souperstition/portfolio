@@ -10,32 +10,33 @@ import bg6 from '../img/bg06.jpg';
 
 const Hero = () => {
 	const body = document.querySelector('body');
-	const images = [ bg1, bg2, bg3, bg4, bg5, bg6 ];
-	let i = 0;
+	const [ index, setIndex ] = useState(1);
 
-	useEffect(() => {
-		body.style.backgroundImage = `url(${images[i]})`;
+	useEffect(
+		() => {
+			const images = [ bg1, bg2, bg3, bg4, bg5, bg6 ];
+			window.setTimeout(() => {
+				body.removeAttribute('class');
+			}, 100);
 
-		window.setTimeout(() => {
-			body.removeAttribute('class');
-		}, 100);
+			const interval = setInterval(() => {
+				setIndex(index + 1);
+				if (index >= images.length - 1) {
+					setIndex(0);
+				}
 
-		const interval = setInterval(() => {
-			i++;
-			if (i >= images.length) {
-				i = 0;
-			}
-
-			body.style.backgroundImage = `url(${images[i]})`;
-		}, 9000);
-		return () => clearInterval(interval);
-	}, []);
+				body.style.backgroundImage = `url(${images[index]})`;
+			}, 6000);
+			return () => clearInterval(interval);
+		},
+		[ body, index ]
+	);
 
 	return (
 		<main>
 			<header>
-				<h1>hi, I'm dani. ❤️</h1>
-				<p>I develop projects for e-learning and the web. Feel free to get in touch or browse my work: </p>
+				<h1>what will we dream up together?</h1>
+				<p>I develop stuff for e-learning and the web. Feel free to get in touch or browse my work: </p>
 			</header>
 			<Nav />
 			<Footer />
