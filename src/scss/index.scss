@@ -45,11 +45,11 @@ body::after {
 	transition: none !important;
 }
 
-main {
+.wrapper {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	justify-content: center;
+	justify-content: space-between;
 	height: 100vh;
 	@include respond(small) {
 		padding: 8vw;
@@ -61,55 +61,97 @@ main {
 			}
 		}
 	}
-	padding: 3.5rem;
+	padding: 2rem 3rem;
 	color: $primary;
 	background-color: rgba(0, 0, 0, 0.4);
-	header {
-		margin-top: 25vh;
+
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
+
 		h1 {
 			font-size: clamp(2.5rem, 5vw, 5rem);
-			margin: 0 0 2rem;
 		}
 
 		p {
 			font-size: 1.25rem;
 		}
-	}
-	nav {
-		display: flex;
-		align-items: flex-start;
 
-		gap: 3rem;
-		svg {
-			width: 3rem;
-			height: 3rem;
-			font-size: 3rem;
-			path {
-				fill: $primary;
+		.btn {
+			border-radius: 0.5rem;
+			padding: 1rem 2rem;
+			text-decoration: none;
+			background-color: $secondary-lt;
+			color: $primary;
+			font-family: $font-family;
+			margin: 1rem 0;
+			@include transition();
+			box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+		}
+
+		.btn:hover {
+			background-color: $secondary-dk;
+		}
+
+		nav {
+			display: flex;
+			align-items: flex-start;
+
+			gap: 3rem;
+			svg {
+				width: 3rem;
+				height: 3rem;
+				font-size: 3rem;
+				path {
+					fill: $primary;
+					@include transition();
+				}
+			}
+
+			svg:hover {
+				cursor: pointer;
+			}
+
+			svg:hover path {
+				fill: $secondary;
+			}
+			@include respond(small) {
+				gap: 8vw;
+
+				svg {
+					width: 6vw;
+					height: 6vw;
+					font-size: 6vw;
+				}
+			}
+		}
+	}
+
+	.header-nav {
+		ul {
+			list-style-type: none;
+			display: flex;
+			gap: 2rem;
+			padding: 0;
+
+			a {
+				color: $primary;
+				text-decoration: none;
 				@include transition();
 			}
-		}
 
-		svg:hover {
-			cursor: pointer;
-		}
-
-		svg:hover path {
-			fill: $secondary;
-		}
-		@include respond(small) {
-			gap: 8vw;
-
-			svg {
-				width: 6vw;
-				height: 6vw;
-				font-size: 6vw;
+			a:hover {
+				color: $secondary;
 			}
 		}
 	}
+
 	footer {
 		font-size: 1rem;
-		margin-top: auto;
+
+		color: $primary;
 		a {
 			color: $primary;
 			@include transition();
