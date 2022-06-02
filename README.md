@@ -13,7 +13,7 @@ I created the background slideshow using React hooks and CSS transitions. The im
 
 My goal here was to get out of my usual perfectionist mindset and just get something out there as quickly as possible. This is a challenge for me, because my biggest weakness tends to be agnozing over small details. 
 
-This project took me an afternoon and I am happier with it than anything I've created for myself so far. I suppose the lesson learned here is to trust the process and just go for it!
+This project was made in a fairly quick flourish, and I ended up being pretty happy with it. I suppose the lesson learned here is to trust the process and just go for it!
 
 ## PLANNED REVISIONS
 
