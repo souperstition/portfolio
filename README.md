@@ -1,7 +1,7 @@
 # PORTFOLIO
 ---
 
-This is the repository for my own personal website. At the moment, it is a simple landing page without functionality. 
+This is the repository for my own personal website. At the moment, it's just a simple landing page. 
 
 ## BUILT USING
 
