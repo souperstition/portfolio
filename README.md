@@ -12,7 +12,7 @@ This is the repository for my personal website and portfolio. It was recently up
 ## BUILT USING
 
 - React
-- Sass
+- SCSS
 - GraphCMS
 - Background images from Unsplash.com
 
