@@ -1,12 +1,20 @@
 # PORTFOLIO
 ---
 
-This is the repository for my own personal website. At the moment, it's just a simple landing page. 
+This is the repository for my personal website and portfolio. It was recently updated to include my most recent projects. The website was built using React, and I fetched data from GraphCMS for my projects page.
+
+## FEATURES
+
+- Background slideshow on homepage
+- Custom card designs on the portfolio page using CSS for the wave and hover effect
+- Filter the portfolio by category
+- See a live demo or go to the github repository for each entry
 
 ## BUILT USING
 
 - React
 - Sass
+- GraphCMS
 - Background images from Unsplash.com
 
 I created the background slideshow using React hooks and CSS transitions. The images are preloaded using the CSS body:after pseudo-selector in order to avoid jumping during the transition.
@@ -17,6 +25,4 @@ This project was made in a fairly quick flourish, and I ended up being pretty ha
 
 ## PLANNED REVISIONS
 
-- CMS integration
-- Portfolio page
-- Blog
+- Do something about the jumpy transitions when navigating through the portfolio
