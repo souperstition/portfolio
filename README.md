@@ -1,5 +1,4 @@
 # PORTFOLIO
----
 
 This is the repository for my personal website and portfolio. It was recently updated to include my most recent projects. The website was built using React, and I fetched data from GraphCMS for my projects page.
 
