@@ -1,12 +1,17 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-.wrapper .projects-page {
-	justify-content: center;
-	align-items: center;
+.wrapper {
+	.projects-page {
+		justify-content: center;
 
-	h1 {
-		align-self: flex-start;
+		h1 {
+			align-self: flex-start;
+		}
+	}
+
+	footer {
+		margin-top: auto;
 	}
 }
 
@@ -16,7 +21,7 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 1.5rem;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 }
 
 .category-name {

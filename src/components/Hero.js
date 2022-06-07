@@ -33,7 +33,7 @@ const Hero = () => {
 	);
 
 	return (
-		<main>
+		<main className="hero">
 			<h1>what will we dream up today?</h1>
 			<p>I develop stuff for e-learning and the web. Feel free to get in touch or browse my work: </p>
 			<Link to="/posts" className="btn">

@@ -34,6 +34,21 @@ body::after {
 		url('../img/bg02.jpg') url('../img/bg01.jpg');
 }
 
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0);
+	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0);
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar {
+	width: 10px;
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: $light-pink;
+}
+
 .preload {
 	-moz-animation: none !important;
 	-webkit-animation: none !important;
@@ -49,7 +64,7 @@ body::after {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 100vh;
+	min-height: 100vh;
 	@include respond(small) {
 		padding: 8vw;
 		gap: 3rem;
@@ -63,6 +78,10 @@ body::after {
 	padding: 2rem 3rem;
 	color: $primary;
 	background-color: rgba(0, 0, 0, 0.4);
+
+	.hero {
+		margin-top: auto;
+	}
 
 	main {
 		display: flex;
@@ -149,7 +168,7 @@ body::after {
 
 	footer {
 		font-size: 1rem;
-		margin-bottom: 2rem;
+		margin-top: auto;
 		color: $primary;
 		a {
 			color: $primary;
