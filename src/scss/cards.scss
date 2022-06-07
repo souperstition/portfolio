@@ -1,0 +1,180 @@
+@use './variables' as *;
+
+* {
+	box-sizing: border-box;
+}
+
+.card {
+	width: 300px;
+	height: 300px;
+	border-radius: 0.5rem;
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+
+	.overlay {
+		opacity: 0.9;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		background-color: rgba(18, 27, 59, 0.4);
+		border-radius: 0.5rem;
+		transition: background-color 1000ms, opacity 1000ms;
+		overflow: hidden;
+	}
+
+	.overlay-top {
+		width: 300px;
+		height: 100px;
+		background-color: $light-teal;
+		margin-bottom: -10px;
+		clip-path: polygon(
+			0% 100%,
+			0% 17.5%,
+			1.69492% 15.6707%,
+			3.38983% 13.8615%,
+			5.08475% 12.0922%,
+			6.77966% 10.3821%,
+			8.47458% 8.75%,
+			10.1695% 7.2138%,
+			11.8644% 5.7902%,
+			13.5593% 4.495%,
+			15.2542% 3.3422%,
+			16.9492% 2.3445%,
+			18.6441% 1.513%,
+			20.339% 0.8565%,
+			22.0339% 0.3824%,
+			23.7288% 0.0959%,
+			25.4237% 0%,
+			27.1186% 0.0959%,
+			28.8136% 0.3824%,
+			30.5085% 0.8565%,
+			32.2034% 1.513%,
+			33.8983% 2.3445%,
+			35.5932% 3.3422%,
+			37.2881% 4.495%,
+			38.9831% 5.7902%,
+			40.678% 7.2138%,
+			42.3729% 8.75%,
+			44.0678% 10.3821%,
+			45.7627% 12.0922%,
+			47.4576% 13.8615%,
+			49.1525% 15.6707%,
+			50.8475% 17.5%,
+			52.5424% 19.3292%,
+			54.2373% 21.1384%,
+			55.9322% 22.9078%,
+			57.6271% 24.6179%,
+			59.322% 26.25%,
+			61.017% 27.7862%,
+			62.7119% 29.2098%,
+			64.4068% 30.505%,
+			66.1017% 31.6578%,
+			67.7966% 32.6554%,
+			69.4915% 33.487%,
+			71.1864% 34.1435%,
+			72.8814% 34.6176%,
+			74.5763% 34.9041%,
+			76.2712% 35%,
+			77.9661% 34.9041%,
+			79.661% 34.6176%,
+			81.3559% 34.1435%,
+			83.0509% 33.487%,
+			84.7458% 32.6554%,
+			86.4407% 31.6578%,
+			88.1356% 30.505%,
+			89.8305% 29.2098%,
+			91.5254% 27.7862%,
+			93.2203% 26.25%,
+			94.9153% 24.6179%,
+			96.6102% 22.9078%,
+			98.3051% 21.1384%,
+			100% 19.3292%,
+			100% 100%
+		);
+
+		h2 {
+			font-family: 'Merriweather Sans', sans-serif;
+			font-size: 1.5rem;
+			width: 100%;
+			padding: 3rem 1rem 0;
+			margin: 0;
+			color: $dark;
+		}
+	}
+	.overlay-bottom {
+		width: 300px;
+		height: 200px;
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		background-color: $light-teal;
+		p {
+			font-family: 'Roboto', sans-serif;
+			color: $dark;
+			font-size: 1rem;
+			margin-top: 100px;
+			padding: 1rem;
+			opacity: 0;
+			transition: margin 1000ms, opacity 500ms;
+		}
+	}
+	.card-navigation {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		.demo-link {
+			font-family: 'Roboto', sans-serif;
+			font-size: 1rem;
+			text-decoration: none;
+			color: $off-white;
+			background-color: $dark;
+			padding: 0.15rem 0.5rem;
+			border-radius: 0.25rem;
+			transition: background-color 500ms;
+		}
+		.demo-link:hover {
+			background-color: $light-pink;
+			color: $dark;
+		}
+	}
+	.slide {
+		transform: translateY(150px);
+		transition: transform 1000ms;
+	}
+	.categories {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display: flex;
+		gap: 0.5rem;
+		padding: 0.5rem;
+		a {
+			font-family: 'Lato', sans-serif;
+			font-size: 0.75rem;
+			color: $off-white;
+			text-decoration: none;
+			text-transform: uppercase;
+			background-color: $dark;
+			padding: 0.1rem 0.5rem;
+			border-radius: 0.2rem;
+			transition: background-color 500ms;
+		}
+		a:hover {
+			background-color: $dark-purple;
+		}
+	}
+}
+.card:hover .overlay {
+	background-color: rgba(18, 27, 59, 0.1);
+	opacity: 1;
+}
+.card:hover .slide {
+	transform: translateY(0);
+}
+.card:hover .overlay-bottom p {
+	margin-top: 0;
+	opacity: 1;
+}

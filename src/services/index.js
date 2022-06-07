@@ -9,17 +9,10 @@ export const getPosts = async () => {
 				edges {
 					cursor
 					node {
-						author {
-							bio
-							name
-							id
-							photo {
-								url
-							}
-						}
-						createdAt
 						slug
 						title
+						demoLink
+						codeLink
 						excerpt
 						featuredImage {
 							url
@@ -35,5 +28,49 @@ export const getPosts = async () => {
 	`;
 
 	const result = await graphQLClient.request(query);
+	return result.postsConnection.edges;
+};
+
+export const getCategories = async () => {
+	const query = gql`
+		query GetCategories {
+			categories {
+				name
+				slug
+			}
+		}
+	`;
+	const result = await graphQLClient.request(query);
+
+	return result.categories;
+};
+
+export const getCategoryPost = async slug => {
+	const query = gql`
+		query GetCategoryPost($slug: String!) {
+			postsConnection(where: { categories_some: { slug: $slug } }) {
+				edges {
+					cursor
+					node {
+						slug
+						title
+						demoLink
+						codeLink
+						excerpt
+						featuredImage {
+							url
+						}
+						categories {
+							name
+							slug
+						}
+					}
+				}
+			}
+		}
+	`;
+
+	const result = await graphQLClient.request(query, { slug });
+
 	return result.postsConnection.edges;
 };

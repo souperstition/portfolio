@@ -4,6 +4,7 @@ import Header from './components/Header';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Projects from './components/posts/Projects';
+import Category from './components/posts/Category';
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Hero />} />
 				<Route path="/posts" element={<Projects />} />
+				<Route path="/posts/:categoryName" element={<Category />} />
 			</Routes>
 			<Footer />
 		</div>
