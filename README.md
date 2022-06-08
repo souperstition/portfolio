@@ -2,6 +2,11 @@
 
 This is the repository for my personal website and portfolio. It was recently updated to include my most recent projects. The website was built using React, and I fetched data from GraphCMS for my projects page.
 
+[DEMO](https://itsdani.me/)
+
+## RECENT REVISIONS
+- 06/08/22: Added page transitions, fixed background attachment on mobile devices, solved layout shifts caused by React Router, and added horizontal scrolling to category list on small screens
+
 ## FEATURES
 
 - Background slideshow on homepage
