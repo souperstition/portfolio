@@ -18,11 +18,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-size: 18px;
 	font-family: $font-family;
-	transition: background-image 3000ms linear;
-	background-size: cover;
-	background-attachment: fixed;
-	background-color: #000;
-	background-image: url('../img/bg01.jpg');
 }
 
 body::after {
@@ -48,6 +43,18 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
 	background-color: $light-pink;
+}
+
+#bg {
+	position: fixed;
+	z-index: -1;
+	width: 100vw;
+	height: 100vh;
+	transition: background-image 3000ms linear;
+	background-size: cover;
+	background-attachment: fixed;
+	background-color: #000;
+	background-image: url('../img/bg01.jpg');
 }
 
 .preload {

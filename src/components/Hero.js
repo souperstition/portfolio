@@ -9,7 +9,7 @@ import bg6 from '../img/bg06.jpg';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-	const body = document.querySelector('body');
+	const body = document.querySelector('#bg');
 	const [ index, setIndex ] = useState(1);
 
 	useEffect(
