@@ -40,10 +40,10 @@
 .cat-list {
 	display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
 	border-bottom: 2px solid $secondary-lt;
 	padding: 0 1.5rem 0.5rem;
-	width: 100%;
+	min-width: 100%;
+	overflow-x: auto;
 
 	span {
 		display: flex;
