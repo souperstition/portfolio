@@ -29,4 +29,5 @@ This project was made in a fairly quick flourish, and I ended up being pretty ha
 
 ## PLANNED REVISIONS
 
-- Do something about the jumpy transitions when navigating through the portfolio
+- Blog
+- Featured/recent on homepage
