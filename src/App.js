@@ -1,20 +1,14 @@
-import Hero from './components/Hero';
 import './scss/index.scss';
 import Header from './components/Header';
-import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import Projects from './components/posts/Projects';
-import Category from './components/posts/Category';
+
+import AnimatedRoutes from './components/AnimatedRoutes';
 
 function App() {
 	return (
 		<div className="wrapper">
 			<Header />
-			<Routes>
-				<Route path="/" element={<Hero />} />
-				<Route path="/posts" element={<Projects />} />
-				<Route path="/posts/:categoryName" element={<Category />} />
-			</Routes>
+			<AnimatedRoutes />
 			<Footer />
 		</div>
 	);

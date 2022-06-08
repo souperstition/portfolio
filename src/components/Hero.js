@@ -7,6 +7,7 @@ import bg4 from '../img/bg04.jpg';
 import bg5 from '../img/bg05.jpg';
 import bg6 from '../img/bg06.jpg';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
 	const body = document.querySelector('#bg');
@@ -32,15 +33,37 @@ const Hero = () => {
 		[ body, index ]
 	);
 
+	const container = {
+		hidden: { opacity: 0 },
+		show: {
+			opacity: 1,
+			transition: {
+				duration: 1,
+				delayChildren: 0.5
+			}
+		},
+		exit: { opacity: 0 }
+	};
+
+	const item = {
+		hidden: { opacity: 0, y: 250 },
+		show: { opacity: 1, y: 0 },
+		exit: { opacity: 0, y: -300 }
+	};
+
 	return (
-		<main className="hero">
-			<h1>what will we dream up today?</h1>
-			<p>I develop stuff for e-learning and the web. Feel free to get in touch or browse my work: </p>
-			<Link to="/posts" className="btn">
-				See My Projects
-			</Link>
-			<Nav />
-		</main>
+		<motion.div className="hero" variants={container} initial="hidden" animate="show" exit="exit">
+			<motion.h1 variants={item}>what will we dream up today?</motion.h1>
+			<motion.p variants={item}>
+				I develop stuff for e-learning and the web. Feel free to get in touch or browse my work:{' '}
+			</motion.p>
+			<motion.div variants={item} className="hero-buttons">
+				<Link to="/posts" className="btn">
+					See My Projects
+				</Link>
+				<Nav />
+			</motion.div>
+		</motion.div>
 	);
 };
 

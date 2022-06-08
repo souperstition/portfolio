@@ -1,5 +1,7 @@
 import React from 'react';
 import '../../scss/cards.scss';
+import { Link } from 'react-router-dom';
+
 const ProjectCard = ({ post }) => {
 	return (
 		<div className="card" style={{ backgroundImage: `url(${post.featuredImage.url})` }}>
@@ -23,9 +25,9 @@ const ProjectCard = ({ post }) => {
 			</div>
 			<div className="categories">
 				{post.categories.map((cat, index) => (
-					<a href={`/posts/${cat.slug}`} key={index}>
+					<Link to={`/posts/${cat.slug}`} key={index}>
 						{cat.name}
-					</a>
+					</Link>
 				))}
 			</div>
 		</div>

@@ -4,33 +4,58 @@ import Categories from './Categories';
 import ProjectCard from './ProjectCard';
 import '../../scss/posts.scss';
 import { getCategoryPost } from '../../services';
+import { motion } from 'framer-motion';
 
 const Category = () => {
 	let params = useParams();
 	const [ posts, setPosts ] = useState([]);
-	const [ loading, setLoading ] = useState(true);
-	useEffect(() => {
-		getCategoryPost(params.categoryName)
-			.then(res => {
+	useEffect(
+		() => {
+			getCategoryPost(params.categoryName).then(res => {
 				setPosts(res);
-			})
-			.finally(() => {
-				setLoading(false);
 			});
+		},
+		[ params.categoryName ]
+	);
+
+	const container = {
+		hidden: { opacity: 0.5 },
+		show: {
+			opacity: 1,
+			transition: {
+				delayChildren: 0.35
+			}
+		}
+	};
+
+	const item = {
+		hidden: { opacity: 0 },
+		show: { opacity: 1 }
+	};
+
+	const scroll = document.querySelector('html');
+	useEffect(() => {
+		scroll.setAttribute('style', 'overflow-y: hidden');
+
+		window.setTimeout(() => {
+			scroll.setAttribute('style', 'overflow-y: auto');
+		}, 350);
 	});
 
 	return (
-		<main className="projects-page">
-			<h1>
+		<motion.div className="projects-page" variants={container} initial="hidden" animate="show" exit="hidden">
+			<motion.h1 variants={item}>
 				<span className="category-name">{params.categoryName}</span> Projects
-			</h1>
-			<div className="cat-list">
+			</motion.h1>
+			<motion.div variants={item} className="cat-list">
 				<Link to="/posts">Show All</Link>
 				<Categories currentCategory={params.categoryName} />
-			</div>
+			</motion.div>
 
-			<div className="posts">{posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)}</div>
-		</main>
+			<motion.div variants={item} className="posts">
+				{posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)}
+			</motion.div>
+		</motion.div>
 	);
 };
 
