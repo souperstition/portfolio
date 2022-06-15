@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Categories from './Categories';
-import ProjectCard from './ProjectCard';
 import '../../scss/posts.scss';
 import { getCategoryPost } from '../../services';
 import { motion } from 'framer-motion';
+import ProjectCard from './ProjectCard';
+import Categories from './Categories';
 
 const Category = () => {
 	let params = useParams();
@@ -23,7 +23,7 @@ const Category = () => {
 		show: {
 			opacity: 1,
 			transition: {
-				delayChildren: 0.35
+				duration: 0.35
 			}
 		}
 	};

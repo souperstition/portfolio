@@ -38,21 +38,18 @@ const Hero = () => {
 		show: {
 			opacity: 1,
 			transition: {
-				duration: 1,
-				delayChildren: 0.5
+				duration: 0.35
 			}
-		},
-		exit: { opacity: 0 }
+		}
 	};
 
 	const item = {
-		hidden: { opacity: 0, y: 250 },
-		show: { opacity: 1, y: 0 },
-		exit: { opacity: 0, y: -300 }
+		hidden: { opacity: 0 },
+		show: { opacity: 1 }
 	};
 
 	return (
-		<motion.div className="hero" variants={container} initial="hidden" animate="show" exit="exit">
+		<motion.div className="hero" variants={container} initial="hidden" animate="show" exit="hidden">
 			<motion.h1 variants={item}>what will we dream up today?</motion.h1>
 			<motion.p variants={item}>
 				I develop stuff for e-learning and the web. Feel free to get in touch or browse my work:{' '}

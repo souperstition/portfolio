@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { getPosts } from '../../services';
-import ProjectCard from './ProjectCard';
-import Categories from './Categories';
 import '../../scss/posts.scss';
 import { motion } from 'framer-motion';
+import ProjectCard from './ProjectCard';
+import Categories from './Categories';
 
 const Projects = () => {
 	const [ posts, setPosts ] = useState([]);
+
 	useEffect(() => {
 		getPosts().then(res => {
 			setPosts(res);
@@ -18,8 +19,7 @@ const Projects = () => {
 		show: {
 			opacity: 1,
 			transition: {
-				duration: 1,
-				delayChildren: 0.5
+				duration: 0.35
 			}
 		}
 	};
@@ -28,9 +28,6 @@ const Projects = () => {
 		hidden: { opacity: 0 },
 		show: { opacity: 1 }
 	};
-
-	const heroDiv = document.querySelector('.hero');
-	const projectsDiv = document.querySelector('.projects-page');
 
 	return (
 		<motion.div className="projects-page" variants={container} initial="hidden" animate="show" exit="hidden">
