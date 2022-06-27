@@ -53,7 +53,13 @@ const Category = () => {
 			</motion.div>
 
 			<motion.div variants={item} className="posts">
-				{posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)}
+				{posts.length === 0 ? (
+					<div className="not-found">
+						That category doesn't exist. <Link to="/posts">Back to Portfolio</Link>
+					</div>
+				) : (
+					posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)
+				)}
 			</motion.div>
 		</motion.div>
 	);

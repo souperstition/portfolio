@@ -12,6 +12,14 @@
 	footer {
 		margin-top: auto;
 	}
+
+	.loading {
+		flex: 1;
+		h2 {
+			align-self: center;
+			justify-self: center;
+		}
+	}
 }
 
 .posts {
@@ -125,4 +133,15 @@
 
 .cat-list::-webkit-scrollbar-button:single-button:horizontal:increment:active {
 	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgba(116, 9, 66, 1)'><polygon points='0,0 0,100 50,50'/></svg>");
+}
+
+.not-found {
+	a {
+		color: $light-pink;
+		transition: color 250ms;
+
+		&:hover {
+			color: $off-white;
+		}
+	}
 }

@@ -10,13 +10,22 @@ import { AnimatePresence } from 'framer-motion';
 const AnimatedRoutes = () => {
 	const location = useLocation();
 
+	const LoadingDiv = () => {
+		return (
+			<div className="loading">
+				<h2>Loading...</h2>
+			</div>
+		);
+	};
+
 	return (
 		<AnimatePresence>
-			<Suspense fallback={'Loading'}>
+			<Suspense fallback={LoadingDiv}>
 				<Routes location={location} key={location.pathname}>
 					<Route path="/" element={<Hero />} />
 					<Route path="/posts" element={<Projects />} />
-					<Route path="/posts/:categoryName" element={<Category />} />
+					<Route path="/posts/categories/:categoryName" element={<Category />} />
+					<Route path="/posts/:post" element={<Projects />} />
 				</Routes>
 			</Suspense>
 		</AnimatePresence>
