@@ -15,7 +15,8 @@
 }
 
 .posts {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	width: 100%;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -23,6 +24,9 @@
 	margin-bottom: 3rem;
 	border-top: 1px solid $lavender;
 	padding-top: 1rem;
+	@include respond(small) {
+		grid-template-columns: 1fr;
+	}
 }
 
 .category-name {

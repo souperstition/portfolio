@@ -5,7 +5,7 @@
 }
 
 .card {
-	width: 300px;
+	width: 100%;
 	height: 300px;
 	border-radius: 0.5rem;
 	background-size: cover;
@@ -27,7 +27,7 @@
 	}
 
 	.overlay-top {
-		width: 300px;
+		width: 100%;
 		height: 100px;
 		background-color: $light-teal;
 		margin-bottom: -10px;
@@ -106,7 +106,7 @@
 		}
 	}
 	.overlay-bottom {
-		width: 300px;
+		width: 100%;
 		height: 200px;
 		border-bottom-left-radius: 0.5rem;
 		border-bottom-right-radius: 0.5rem;
