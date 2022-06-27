@@ -3,7 +3,6 @@
 
 .wrapper {
 	.projects-page {
-		flex: 1;
 		h1 {
 			align-self: flex-start;
 		}
@@ -11,14 +10,6 @@
 
 	footer {
 		margin-top: auto;
-	}
-
-	.loading {
-		flex: 1;
-		h2 {
-			align-self: center;
-			justify-self: center;
-		}
 	}
 }
 

@@ -1,33 +1,23 @@
 /* eslint-disable import/first */
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-const Hero = React.lazy(() => import('./Hero'));
-const Projects = React.lazy(() => import('./posts/Projects'));
-const Category = React.lazy(() => import('./posts/Category'));
+import Hero from './Hero';
+import Projects from './posts/Projects';
+import Category from './posts/Category';
 
 import { AnimatePresence } from 'framer-motion';
 
 const AnimatedRoutes = () => {
 	const location = useLocation();
 
-	const LoadingDiv = () => {
-		return (
-			<div className="loading">
-				<h2>Loading...</h2>
-			</div>
-		);
-	};
-
 	return (
-		<AnimatePresence>
-			<Suspense fallback={LoadingDiv}>
-				<Routes location={location} key={location.pathname}>
-					<Route path="/" element={<Hero />} />
-					<Route path="/posts" element={<Projects />} />
-					<Route path="/posts/categories/:categoryName" element={<Category />} />
-					<Route path="/posts/:post" element={<Projects />} />
-				</Routes>
-			</Suspense>
+		<AnimatePresence exitBeforeEnter>
+			<Routes location={location} key={location.pathname}>
+				<Route path="/" element={<Hero />} />
+				<Route path="/posts" element={<Projects />} />
+				<Route path="/posts/categories/:categoryName" element={<Category />} />
+				<Route path="/posts/:post" element={<Projects />} />
+			</Routes>
 		</AnimatePresence>
 	);
 };
