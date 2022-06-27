@@ -15,11 +15,11 @@ const ProjectCard = ({ post }) => {
 					<p>{post.excerpt}</p>
 					<div className="card-navigation">
 						{post.demoLink && (
-							<a href={`${post.demoLink}`} className="demo-link">
+							<a href={`${post.demoLink}`} target="_blank" className="demo-link">
 								<i className="fa-solid fa-arrow-up-right-from-square" /> demo
 							</a>
 						)}
-						<a href={`${post.codeLink}`} className="demo-link">
+						<a href={`${post.codeLink}`} target="_blank" className="demo-link">
 							<i className="fa-brands fa-github" /> code
 						</a>
 					</div>

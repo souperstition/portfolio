@@ -45,10 +45,14 @@ const ProjectPage = () => {
 				<Categories />
 			</div>
 			<hr />
-			<motion.div className="post">
+			<motion.div className="post" variants={container} initial="hidden" animate="show" exit="exit">
 				<h2>{project.title}</h2>
 				<p>{project.excerpt}</p>
-				{!isLoading && <img alt={project.title} src={project.featuredImage.url} className="project-image" />}
+				{!isLoading && (
+					<a href={project.featuredImage.url} target="_blank">
+						<img alt={project.title} src={project.featuredImage.url} className="project-image" />
+					</a>
+				)}
 				<ReactMarkdown className="post-body">{project.projectPost}</ReactMarkdown>
 			</motion.div>
 		</motion.div>
