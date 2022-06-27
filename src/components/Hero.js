@@ -50,16 +50,14 @@ const Hero = () => {
 
 	return (
 		<motion.div className="hero" variants={container} initial="hidden" animate="show" exit="exit">
-			<motion.h1>what will we dream up today?</motion.h1>
-			<motion.p>
-				I develop stuff for e-learning and the web. Feel free to get in touch or browse my work:{' '}
-			</motion.p>
-			<motion.div className="hero-buttons">
+			<h1>what will we dream up today?</h1>
+			<p>I develop stuff for e-learning and the web. Feel free to get in touch or browse my work: </p>
+			<div className="hero-buttons">
 				<Link to="/posts" className="btn">
 					See My Projects
 				</Link>
 				<Nav />
-			</motion.div>
+			</div>
 		</motion.div>
 	);
 };

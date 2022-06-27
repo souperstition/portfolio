@@ -4,7 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Hero from './Hero';
 import Projects from './posts/Projects';
 import Category from './posts/Category';
-
+import ProjectPage from './posts/ProjectPage';
 import { AnimatePresence } from 'framer-motion';
 
 const AnimatedRoutes = () => {
@@ -16,7 +16,7 @@ const AnimatedRoutes = () => {
 				<Route path="/" element={<Hero />} />
 				<Route path="/posts" element={<Projects />} />
 				<Route path="/posts/categories/:categoryName" element={<Category />} />
-				<Route path="/posts/:post" element={<Projects />} />
+				<Route path="/posts/:post" element={<ProjectPage />} />
 			</Routes>
 		</AnimatePresence>
 	);

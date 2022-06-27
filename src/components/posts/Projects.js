@@ -31,10 +31,10 @@ const Projects = () => {
 
 	return (
 		<motion.div className="projects-page" variants={container} initial="hidden" animate="show" exit="exit">
-			<motion.h1>Portfolio</motion.h1>
-			<motion.div className="cat-list">
+			<h1>Portfolio</h1>
+			<div className="cat-list">
 				<Categories />
-			</motion.div>
+			</div>
 
 			<motion.div className="posts">
 				{posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)}

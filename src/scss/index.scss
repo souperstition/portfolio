@@ -12,6 +12,7 @@
 html,
 body {
 	min-height: 100%;
+	scroll-behavior: smooth;
 }
 
 html {
@@ -104,6 +105,9 @@ body::-webkit-scrollbar-thumb {
 		}
 	}
 	padding: 2rem 3rem;
+	@include respond(x-large) {
+		padding: 2rem 10rem;
+	}
 	color: $primary;
 
 	.hero {

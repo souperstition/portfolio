@@ -9,4 +9,10 @@
 			@content;
 		}
 	}
+
+	@if $breakpoint == x-large {
+		@media only screen and (min-width: 1200px) {
+			@content;
+		}
+	}
 }

@@ -74,3 +74,29 @@ export const getCategoryPost = async slug => {
 
 	return result.postsConnection.edges;
 };
+
+export const getProject = async slug => {
+	const query = gql`
+		query GetProject($slug: String!) {
+			post(where: { slug: $slug }) {
+				slug
+				title
+				excerpt
+				demoLink
+				codeLink
+				projectPost
+				featuredImage {
+					url
+				}
+				categories {
+					name
+					slug
+				}
+			}
+		}
+	`;
+
+	const result = await graphQLClient.request(query, { slug });
+
+	return result.post;
+};

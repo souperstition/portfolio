@@ -45,15 +45,15 @@ const Category = () => {
 
 	return (
 		<motion.div className="projects-page" variants={container} initial="hidden" animate="show" exit="exit">
-			<motion.h1>
+			<h1>
 				<span className="category-name">{params.categoryName}</span> Projects
-			</motion.h1>
-			<motion.div className="cat-list">
+			</h1>
+			<div className="cat-list">
 				<Link to="/posts">Show All</Link>
 				<Categories currentCategory={params.categoryName} />
-			</motion.div>
+			</div>
 
-			<motion.div className="posts">
+			<div className="posts">
 				{posts.length === 0 ? (
 					<div className="not-found">
 						That category doesn't exist. <Link to="/posts">Back to Portfolio</Link>
@@ -61,7 +61,7 @@ const Category = () => {
 				) : (
 					posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)
 				)}
-			</motion.div>
+			</div>
 		</motion.div>
 	);
 };
