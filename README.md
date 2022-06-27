@@ -28,6 +28,10 @@ My goal here was to get out of my usual perfectionist mindset and just get somet
 
 This project was made in a fairly quick flourish, and I ended up being pretty happy with it. I suppose the lesson learned here is to trust the process and just go for it!
 
+## KNOWN ISSUES
+
+- Category gives message "that category doesn't exist" before the category finishes loading.
+
 ## PLANNED REVISIONS
 
 - Blog
