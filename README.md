@@ -5,6 +5,7 @@ This is the repository for my personal website and portfolio. It was recently up
 [DEMO](https://itsdani.me/)
 
 ## RECENT REVISIONS
+- 06/28/22: Add markdown formatting and code syntax highlighting for project pages
 - 06/27/22: Added a description page for each project
 - 06/08/22: Added page transitions, fixed background attachment on mobile devices, solved layout shifts caused by React Router, and added horizontal scrolling to category list on small screens
 

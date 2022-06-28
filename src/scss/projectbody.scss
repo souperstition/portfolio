@@ -22,12 +22,12 @@ hr {
 	margin-top: 0.5rem;
 }
 
-.post-body img {
+.post img {
 	max-height: 300px;
 	max-width: 100%;
 	object-fit: contain;
 	display: block;
-	margin: 1rem 0;
+	margin: 1rem auto;
 	border-radius: 0.5rem;
 }
 
@@ -63,8 +63,7 @@ p {
 
 pre {
 	margin: 1.5rem auto;
-	background-color: $lavender;
-	padding: 1rem 3rem;
+	padding: 1rem;
 	width: 80%;
 	border-radius: 0.5rem;
 	overflow: auto;

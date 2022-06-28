@@ -4,7 +4,11 @@ import { useParams, Link } from 'react-router-dom';
 import { getProject } from '../../services';
 import Categories from './Categories';
 import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import gfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import remarkHeadingId from 'remark-heading-id';
+import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import '../../scss/projectbody.scss';
 
 const ProjectPage = () => {
@@ -52,9 +56,26 @@ const ProjectPage = () => {
 				{!isLoading && (
 					<div className="project-image" style={{ backgroundImage: `url(${project.featuredImage.url})` }} />
 				)}
-				<ReactMarkdown remarkPlugins={[ gfm ]} className="post-body">
-					{project.projectPost}
-				</ReactMarkdown>
+				<ReactMarkdown
+					remarkPlugins={([ gfm ], [ remarkToc ], [ remarkHeadingId ])}
+					children={project.projectPost}
+					components={{
+						code({ node, inline, className, children, ...props }) {
+							const match = /language-(\w+)/.exec(className || '');
+							return !inline && match ? (
+								<SyntaxHighlighter
+									children={String(children).replace(/\n$/, '')}
+									style={oneDark}
+									language={match[1]}
+									PreTag="div"
+									{...props}
+								/>
+							) : (
+								<SyntaxHighlighter children={children} style={oneDark} PreTag="div" {...props} />
+							);
+						}
+					}}
+				/>
 			</motion.div>
 		</motion.div>
 	);
