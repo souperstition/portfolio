@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getProject } from '../../services';
 import Categories from './Categories';
 import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 import '../../scss/projectbody.scss';
 
 const ProjectPage = () => {
@@ -51,7 +52,9 @@ const ProjectPage = () => {
 				{!isLoading && (
 					<div className="project-image" style={{ backgroundImage: `url(${project.featuredImage.url})` }} />
 				)}
-				<ReactMarkdown className="post-body">{project.projectPost}</ReactMarkdown>
+				<ReactMarkdown remarkPlugins={[ gfm ]} className="post-body">
+					{project.projectPost}
+				</ReactMarkdown>
 			</motion.div>
 		</motion.div>
 	);
