@@ -11,6 +11,7 @@
 
 	@include respond(small) {
 		font-size: 16px;
+		padding: 0.5rem 1rem 1rem;
 	}
 }
 
@@ -31,11 +32,15 @@ hr {
 }
 
 .project-image {
-	max-width: 400px;
-	object-fit: contain;
-	object-position: top center;
-	margin: 1rem 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 1rem;
+	margin: 1rem 0;
 	border-radius: 0.5rem;
+	width: 100%;
+	height: 300px;
+	background-size: cover;
 }
 
 h2 {

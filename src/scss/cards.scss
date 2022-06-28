@@ -12,6 +12,27 @@
 	background-position: top center;
 	position: relative;
 
+	&:hover,
+	&:focus,
+	&:hover:focus {
+		.overlay {
+			background-color: rgba(18, 27, 59, 0.1);
+			opacity: 1;
+			transition-delay: 0s;
+		}
+
+		.slide {
+			transform: translateY(0);
+			transition-delay: 0s;
+		}
+
+		.overlay-bottom p {
+			margin-top: 0;
+			opacity: 1;
+			transition-delay: 0s;
+		}
+	}
+
 	.overlay {
 		opacity: 0.9;
 		position: absolute;
@@ -23,6 +44,7 @@
 		background-color: rgba(18, 27, 59, 0.4);
 		border-radius: 0.5rem;
 		transition: background-color 1000ms, opacity 1000ms;
+		transition-delay: 2s;
 		overflow: hidden;
 	}
 
@@ -124,33 +146,191 @@
 			color: $dark;
 			font-size: 1rem;
 			margin-top: 100px;
-			padding: 1rem;
+			padding: 0.5rem 1rem 1rem;
 			opacity: 0;
 			transition: margin 1000ms, opacity 500ms;
+			transition-delay: 2s;
 		}
 	}
 	.card-navigation {
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
-		.demo-link {
-			font-family: 'Roboto', sans-serif;
-			font-size: 1rem;
-			text-decoration: none;
-			color: $off-white;
-			background-color: $dark;
-			padding: 0.15rem 0.5rem;
-			border-radius: 0.25rem;
-			transition: background-color 500ms;
-		}
-		.demo-link:hover {
-			background-color: $light-pink;
+		margin-top: 1rem;
+	}
+	.post-link {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1rem;
+		text-decoration: none;
+		color: $off-white;
+		background-color: $dark;
+		padding: 0.5rem 1rem;
+		border-radius: 0.25rem;
+		display: block;
+		width: fit-content;
+		margin: 0 auto 1rem;
+		animation: out 250ms ease-in-out forwards;
+		transition: color 500ms ease-in-out;
+		&:hover {
+			animation: in 250ms ease-in-out forwards;
 			color: $dark;
 		}
+	}
+	@keyframes in {
+		0% {
+			background: linear-gradient(to right, $light-pink 0%, $dark);
+		}
+
+		5% {
+			background: linear-gradient(to right, $light-pink 5%, $dark);
+		}
+		10% {
+			background: linear-gradient(to right, $light-pink 10%, $dark);
+		}
+		15% {
+			background: linear-gradient(to right, $light-pink 15%, $dark);
+		}
+		20% {
+			background: linear-gradient(to right, $light-pink 20%, $dark);
+		}
+		25% {
+			background: linear-gradient(to right, $light-pink 25%, $dark);
+		}
+		30% {
+			background: linear-gradient(to right, $light-pink 30%, $dark);
+		}
+		35% {
+			background: linear-gradient(to right, $light-pink 35%, $dark);
+		}
+		40% {
+			background: linear-gradient(to right, $light-pink 40%, $dark);
+		}
+		45% {
+			background: linear-gradient(to right, $light-pink 45%, $dark);
+		}
+		50% {
+			background: linear-gradient(to right, $light-pink 50%, $dark);
+		}
+		55% {
+			background: linear-gradient(to right, $light-pink 55%, $dark);
+		}
+		60% {
+			background: linear-gradient(to right, $light-pink 60%, $dark);
+		}
+		65% {
+			background: linear-gradient(to right, $light-pink 65%, $dark);
+		}
+		70% {
+			background: linear-gradient(to right, $light-pink 70%, $dark);
+		}
+		75% {
+			background: linear-gradient(to right, $light-pink 75%, $dark);
+		}
+		80% {
+			background: linear-gradient(to right, $light-pink 80%, $dark);
+		}
+		85% {
+			background: linear-gradient(to right, $light-pink 85%, $dark);
+		}
+		90% {
+			background: linear-gradient(to right, $light-pink 90%, $dark);
+		}
+		95% {
+			background: linear-gradient(to right, $light-pink 95%, $dark);
+		}
+		99% {
+			background: linear-gradient(to right, $light-pink 100%, $dark);
+		}
+		100% {
+			background-color: $light-pink;
+		}
+	}
+	@keyframes out {
+		0% {
+			background: linear-gradient(to right, $light-pink 100%, $dark);
+		}
+		5% {
+			background: linear-gradient(to right, $light-pink 95%, $dark);
+		}
+		10% {
+			background: linear-gradient(to right, $light-pink 90%, $dark);
+		}
+		15% {
+			background: linear-gradient(to right, $light-pink 85%, $dark);
+		}
+		20% {
+			background: linear-gradient(to right, $light-pink 80%, $dark);
+		}
+		25% {
+			background: linear-gradient(to right, $light-pink 75%, $dark);
+		}
+		30% {
+			background: linear-gradient(to right, $light-pink 70%, $dark);
+		}
+		35% {
+			background: linear-gradient(to right, $light-pink 65%, $dark);
+		}
+		40% {
+			background: linear-gradient(to right, $light-pink 60%, $dark);
+		}
+		45% {
+			background: linear-gradient(to right, $light-pink 55%, $dark);
+		}
+		50% {
+			background: linear-gradient(to right, $light-pink 50%, $dark);
+		}
+		55% {
+			background: linear-gradient(to right, $light-pink 45%, $dark);
+		}
+		60% {
+			background: linear-gradient(to right, $light-pink 40%, $dark);
+		}
+		65% {
+			background: linear-gradient(to right, $light-pink 35%, $dark);
+		}
+		70% {
+			background: linear-gradient(to right, $light-pink 30%, $dark);
+		}
+		75% {
+			background: linear-gradient(to right, $light-pink 25%, $dark);
+		}
+		80% {
+			background: linear-gradient(to right, $light-pink 20%, $dark);
+		}
+		85% {
+			background: linear-gradient(to right, $light-pink 15%, $dark);
+		}
+		90% {
+			background: linear-gradient(to right, $light-pink 10%, $dark);
+		}
+		95% {
+			background: linear-gradient(to right, $light-pink 5%, $dark);
+		}
+		99% {
+			background: linear-gradient(to right, $light-pink 0%, $dark);
+		}
+		100% {
+			background-color: $dark;
+		}
+	}
+	.demo-link {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1rem;
+		text-decoration: none;
+		color: $off-white;
+		background-color: $dark;
+		padding: 0.15rem 0.5rem;
+		border-radius: 0.25rem;
+		transition: background-color 500ms;
+	}
+	.demo-link:hover {
+		background-color: $light-pink;
+		color: $dark;
 	}
 	.slide {
 		transform: translateY(150px);
 		transition: transform 1000ms;
+		transition-delay: 2s;
 	}
 	.categories {
 		position: absolute;
@@ -174,15 +354,4 @@
 			background-color: $dark-purple;
 		}
 	}
-}
-.card:hover .overlay {
-	background-color: rgba(18, 27, 59, 0.1);
-	opacity: 1;
-}
-.card:hover .slide {
-	transform: translateY(0);
-}
-.card:hover .overlay-bottom p {
-	margin-top: 0;
-	opacity: 1;
 }

@@ -13,13 +13,16 @@ const ProjectCard = ({ post }) => {
 				</div>
 				<div className="overlay-bottom slide">
 					<p>{post.excerpt}</p>
+					<Link className="post-link" to={`/posts/${post.slug}`}>
+						Read More
+					</Link>
 					<div className="card-navigation">
 						{post.demoLink && (
-							<a href={`${post.demoLink}`} target="_blank" className="demo-link">
+							<a href={`${post.demoLink}`} rel="noreferrer" target="_blank" className="demo-link">
 								<i className="fa-solid fa-arrow-up-right-from-square" /> demo
 							</a>
 						)}
-						<a href={`${post.codeLink}`} target="_blank" className="demo-link">
+						<a href={`${post.codeLink}`} rel="noreferrer" target="_blank" className="demo-link">
 							<i className="fa-brands fa-github" /> code
 						</a>
 					</div>

@@ -49,9 +49,7 @@ const ProjectPage = () => {
 				<h2>{project.title}</h2>
 				<p>{project.excerpt}</p>
 				{!isLoading && (
-					<a href={project.featuredImage.url} target="_blank">
-						<img alt={project.title} src={project.featuredImage.url} className="project-image" />
-					</a>
+					<div className="project-image" style={{ backgroundImage: `url(${project.featuredImage.url})` }} />
 				)}
 				<ReactMarkdown className="post-body">{project.projectPost}</ReactMarkdown>
 			</motion.div>
