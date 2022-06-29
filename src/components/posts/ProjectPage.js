@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import gfm from 'remark-gfm';
 import remarkHeadingId from 'remark-heading-id';
+import remarkGemoji from 'remark-gemoji';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import '../../scss/projectbody.scss';
 
@@ -43,6 +44,8 @@ const ProjectPage = () => {
 
 	const TableImg = props => <img src={props.src} alt={props.alt} className="table-img" />;
 
+	const md = `## [:arrow_up_small:](#) Section Header`;
+
 	return (
 		<motion.div variants={container} initial="hidden" animate="show" exit="exit">
 			<h1>{project.title}</h1>
@@ -63,7 +66,8 @@ const ProjectPage = () => {
 				</a>
 				<ReactMarkdown
 					id="markdown"
-					remarkPlugins={[ gfm, remarkHeadingId ]}
+					remarkPlugins={[ gfm, remarkHeadingId, remarkGemoji ]}
+					// children={md}
 					children={project.projectPost}
 					components={{
 						code({ node, inline, className, children, ...props }) {
@@ -87,7 +91,7 @@ const ProjectPage = () => {
 								/>
 							);
 						},
-						img: ({ node, ...props }) => <TableImg {...props} />
+						img: ({ node, ...props }) => <TableImg {...props} allowDangerousHtml />
 					}}
 				/>
 			</motion.div>

@@ -118,15 +118,17 @@
 			100% 100%
 		);
 
-		h2 {
-			font-family: 'Merriweather Sans', sans-serif;
-			font-size: 1.5rem;
+		#card-h2 {
+			display: block;
 			width: 100%;
 			padding: 3rem 1rem 0;
 			margin: 0;
 			color: $dark;
 			border: none;
 			a {
+				font-family: 'Merriweather Sans', sans-serif;
+				opacity: 1;
+				font-size: 1.5rem;
 				color: $dark;
 				transition: color 250ms;
 				&:hover {
@@ -146,7 +148,7 @@
 			color: $dark;
 			font-size: 1rem;
 			margin-top: 100px;
-			padding: 0.5rem 1rem 1rem;
+			padding: 0.5rem 1rem 0.5rem;
 			opacity: 0;
 			transition: margin 1000ms, opacity 500ms;
 			transition-delay: 2s;
@@ -155,8 +157,8 @@
 	.card-navigation {
 		display: flex;
 		justify-content: center;
-		gap: 1rem;
-		margin-top: 1rem;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
 	}
 	.post-link {
 		font-family: 'Roboto', sans-serif;
@@ -168,7 +170,7 @@
 		border-radius: 0.25rem;
 		display: block;
 		width: fit-content;
-		margin: 0 auto 1rem;
+		margin: 0 auto;
 		animation: out 250ms ease-in-out forwards;
 		transition: color 500ms ease-in-out;
 		&:hover {
@@ -180,7 +182,6 @@
 		0% {
 			background: linear-gradient(to right, $light-pink 0%, $dark);
 		}
-
 		5% {
 			background: linear-gradient(to right, $light-pink 5%, $dark);
 		}

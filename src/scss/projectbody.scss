@@ -45,7 +45,22 @@ hr {
 h2 {
 	margin: 1.5rem 0;
 	width: 100%;
+	display: flex;
+	align-items: baseline;
+	gap: 0.25rem;
 	border-bottom: 1px solid $lavender;
+	a {
+		text-decoration: none;
+		font-size: 1rem;
+		font-weight: 200;
+		opacity: 0.5;
+		transition: opacity 250ms;
+		margin-left: auto;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
 a {
@@ -94,8 +109,8 @@ pre {
 table {
 	width: fit-content;
 	max-width: 100%;
-	margin: 1rem auto 1rem;
-	background-color: rgba(180, 175, 220, 0.3);
+	margin: 2rem auto;
+	background-color: $off-white;
 	border-spacing: 0;
 	border-radius: 0.5rem;
 	border: 2px solid $lavender;
@@ -117,9 +132,21 @@ table {
 		.table-img {
 			max-width: 100%;
 			max-height: 100%;
-			object-fit: cover;
 			margin: 0 auto;
 			border-radius: 0;
+		}
+
+		tr:last-child {
+			td:first-child {
+				.table-img {
+					border-bottom-left-radius: 0.5rem;
+				}
+			}
+			td:last-child {
+				.table-img {
+					border-bottom-right-radius: 0.5rem;
+				}
+			}
 		}
 	}
 }

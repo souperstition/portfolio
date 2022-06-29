@@ -7,7 +7,7 @@ const ProjectCard = ({ post }) => {
 		<div className="card" style={{ backgroundImage: `url(${post.featuredImage.url})` }}>
 			<div className="overlay">
 				<div className="overlay-top slide">
-					<h2>
+					<h2 id="card-h2">
 						<Link to={`/posts/${post.slug}`}>{post.title}</Link>
 					</h2>
 				</div>
