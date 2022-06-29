@@ -23,8 +23,7 @@ hr {
 }
 
 .post img {
-	max-height: 300px;
-	max-width: 100%;
+	max-width: 80%;
 	object-fit: contain;
 	display: block;
 	margin: 1rem auto;
@@ -63,27 +62,64 @@ p {
 
 pre {
 	margin: 1.5rem auto;
-	padding: 1rem;
+	padding: 0;
 	width: 80%;
 	border-radius: 0.5rem;
 	overflow: auto;
 
-	&::-webkit-scrollbar-track {
-		background-color: $dark;
+	div {
+		margin: 0 !important;
+
+		&::-webkit-scrollbar-track {
+			background-color: $dark;
+		}
+
+		&::-webkit-scrollbar {
+			height: 5px;
+			background-color: $dark;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $light-pink;
+		}
+
+		@include respond(small) {
+			padding: 1rem;
+			font-size: 0.75rem;
+			width: 95%;
+		}
+	}
+}
+
+table {
+	width: fit-content;
+	max-width: 100%;
+	margin: 1rem auto 1rem;
+	background-color: rgba(180, 175, 220, 0.3);
+	border-spacing: 0;
+	border-radius: 0.5rem;
+	border: 2px solid $lavender;
+	box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+
+	thead {
+		display: none;
 	}
 
-	&::-webkit-scrollbar {
-		height: 10px;
-		background-color: $dark;
-	}
+	tbody {
+		tr:nth-of-type(odd) {
+			background-color: $lavender;
 
-	&::-webkit-scrollbar-thumb {
-		background-color: $light-pink;
-	}
+			td {
+				padding: 0.5rem 1rem;
+			}
+		}
 
-	@include respond(small) {
-		padding: 1rem;
-		font-size: 0.75rem;
-		width: 95%;
+		.table-img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: cover;
+			margin: 0 auto;
+			border-radius: 0;
+		}
 	}
 }

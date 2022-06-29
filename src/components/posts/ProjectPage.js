@@ -6,7 +6,6 @@ import Categories from './Categories';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import gfm from 'remark-gfm';
-import remarkToc from 'remark-toc';
 import remarkHeadingId from 'remark-heading-id';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import '../../scss/projectbody.scss';
@@ -42,6 +41,8 @@ const ProjectPage = () => {
 		}
 	};
 
+	const TableImg = props => <img src={props.src} alt={props.alt} className="table-img" />;
+
 	return (
 		<motion.div variants={container} initial="hidden" animate="show" exit="exit">
 			<h1>{project.title}</h1>
@@ -56,24 +57,37 @@ const ProjectPage = () => {
 				{!isLoading && (
 					<div className="project-image" style={{ backgroundImage: `url(${project.featuredImage.url})` }} />
 				)}
+
+				<a href={`${project.demoLink}`} rel="noreferrer" target="_blank">
+					Live Site Demo
+				</a>
 				<ReactMarkdown
-					remarkPlugins={([ gfm ], [ remarkToc ], [ remarkHeadingId ])}
+					id="markdown"
+					remarkPlugins={[ gfm, remarkHeadingId ]}
 					children={project.projectPost}
 					components={{
 						code({ node, inline, className, children, ...props }) {
 							const match = /language-(\w+)/.exec(className || '');
 							return !inline && match ? (
 								<SyntaxHighlighter
-									children={String(children).replace(/\n$/, '')}
+									children={children}
 									style={oneDark}
+									showLineNumbers={true}
 									language={match[1]}
 									PreTag="div"
 									{...props}
 								/>
 							) : (
-								<SyntaxHighlighter children={children} style={oneDark} PreTag="div" {...props} />
+								<SyntaxHighlighter
+									children={children}
+									showLineNumbers={true}
+									style={oneDark}
+									PreTag="div"
+									{...props}
+								/>
 							);
-						}
+						},
+						img: ({ node, ...props }) => <TableImg {...props} />
 					}}
 				/>
 			</motion.div>
