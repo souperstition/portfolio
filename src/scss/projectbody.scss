@@ -16,10 +16,11 @@
 
 	#contents {
 		padding: 0.5rem 1rem;
-		margin-left: 3rem;
+
 		ul {
 			list-style-type: none;
 			padding: 0;
+			width: 100%;
 		}
 
 		a {
@@ -33,11 +34,17 @@
 	}
 
 	ul {
-		background-color: $light-pink;
-		width: fit-content;
+		background-color: $off-white;
+		width: 80%;
+		margin: 1.5rem auto;
 		padding: 1rem 1rem 1rem 2.5rem;
 		border-radius: 0.5rem;
-		margin: 1rem 3rem;
+
+		@include respond(small) {
+			margin: 1.5rem 0;
+			width: 100%;
+			max-width: 100%;
+		}
 
 		ul {
 			margin: 0;
@@ -144,12 +151,11 @@ pre {
 		&::-webkit-scrollbar-thumb {
 			background-color: $light-pink;
 		}
+	}
 
-		@include respond(small) {
-			padding: 1rem;
-			font-size: 0.75rem;
-			width: 95%;
-		}
+	@include respond(small) {
+		font-size: 0.75rem;
+		width: 100%;
 	}
 
 	code {
@@ -161,13 +167,17 @@ pre {
 
 table {
 	width: fit-content;
-	max-width: 100%;
+	max-width: 80%;
 	margin: 2rem auto;
 	background-color: $off-white;
 	border-spacing: 0;
 	border-radius: 0.5rem;
 	border: 2px solid $lavender;
 	box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+
+	@include respond(small) {
+		max-width: 100%;
+	}
 
 	thead {
 		display: none;
