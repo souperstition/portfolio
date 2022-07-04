@@ -103,6 +103,10 @@ h2 {
 		font-weight: 600;
 		text-transform: uppercase;
 		text-decoration: none;
+
+		a {
+			margin: 0 0.5rem;
+		}
 	}
 }
 
@@ -194,6 +198,18 @@ table {
 			td:last-child {
 				.table-img {
 					border-bottom-right-radius: 0.5rem;
+				}
+			}
+		}
+	}
+}
+
+.table-with-text {
+	table {
+		tbody {
+			tr:nth-of-type(even) {
+				td {
+					padding: 0.5rem 1rem;
 				}
 			}
 		}

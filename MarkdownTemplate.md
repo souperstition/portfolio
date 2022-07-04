@@ -1,9 +1,13 @@
 ## :bookmark_tabs: Table of Contents {#toc}
 
-- [Project Overview](#overview)
+<ul id="contents">
+
 - [Purpose](#purpose)
+- [Project Overview](#overview)
 - [Build Process](#process)
 - [Results](#results)
+
+</ul>
 
 ## :chart_with_upwards_trend: Purpose [:top:](#toc) {#purpose}
 
@@ -21,4 +25,4 @@
 
 
 
-[:top: back to top](#)
+:top: [back to top](#)

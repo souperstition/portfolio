@@ -30,7 +30,7 @@ const ProjectCard = ({ post }) => {
 			</div>
 			<div className="categories">
 				{post.categories.map((cat, index) => (
-					<Link to={`/posts/${cat.slug}`} key={index}>
+					<Link to={`/posts/categories/${cat.slug}`} key={index}>
 						{cat.name}
 					</Link>
 				))}

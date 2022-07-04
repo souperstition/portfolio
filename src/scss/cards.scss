@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './mixins' as *;
 
 * {
 	box-sizing: border-box;
@@ -148,10 +149,14 @@
 			color: $dark;
 			font-size: 1rem;
 			margin-top: 100px;
-			padding: 0.5rem 1rem 0.5rem;
+			padding: 0.5rem 1rem 0;
 			opacity: 0;
 			transition: margin 1000ms, opacity 500ms;
 			transition-delay: 2s;
+			@include respond(medium) {
+				padding: 0.25rem 1rem 0;
+				font-size: 0.9rem;
+			}
 		}
 	}
 	.card-navigation {
@@ -165,17 +170,24 @@
 		font-size: 1rem;
 		text-decoration: none;
 		color: $off-white;
-		background-color: $dark;
+		background-color: $light-pink;
 		padding: 0.5rem 1rem;
 		border-radius: 0.25rem;
 		display: block;
 		width: fit-content;
 		margin: 0 auto;
-		animation: out 250ms ease-in-out forwards;
-		transition: color 500ms ease-in-out;
+		animation: out 250ms ease-out forwards;
+		animation-delay: 1s;
+		transition: color 1250ms ease-out;
+
 		&:hover {
-			animation: in 250ms ease-in-out forwards;
+			animation: in 250ms ease-out forwards;
 			color: $dark;
+			background-color: $light-pink;
+		}
+		@include respond(medium) {
+			padding: 0.25rem 1rem;
+			font-size: 0.9rem;
 		}
 	}
 	@keyframes in {
@@ -316,12 +328,12 @@
 	}
 	.demo-link {
 		font-family: 'Roboto', sans-serif;
-		font-size: 1rem;
+		font-size: 0.75rem;
 		text-decoration: none;
 		color: $off-white;
 		background-color: $dark;
-		padding: 0.15rem 0.5rem;
-		border-radius: 0.25rem;
+		padding: 0.1rem 0.5rem;
+		border-radius: 0.2rem;
 		transition: background-color 500ms;
 	}
 	.demo-link:hover {

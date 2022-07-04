@@ -53,7 +53,13 @@ const ProjectPage = () => {
 			<hr />
 			<motion.div className="post" variants={container} initial="hidden" animate="show" exit="exit">
 				<h2 id="project-title">{project.title}
-					<a href={project.categories[0].slug} className='title-category'>{project.categories[0].name}</a>
+					<span className="title-category">
+						{project.categories.map((cat, index) => (
+					<Link to={`/posts/categories/${cat.slug}`} key={index}>
+						{cat.name}
+					</Link>
+				))}
+					</span>
 				</h2>
 				<p>{project.excerpt}</p>
 					<div className="project-image" style={{ backgroundImage: `url(${project.featuredImage.url})` }} />
@@ -93,7 +99,7 @@ const ProjectPage = () => {
 			<div className='bottom-nav'>
 				<Link to="/posts" title="Back to Portfolio"><FontAwesomeIcon icon={faBackward} /><span className='bottom-link'>Portfolio</span></Link>
 				<Link to="/" title="Home"><FontAwesomeIcon icon={faHome} /><span className='bottom-link'>Home</span></Link>
-				<Link to={project.categories[0].slug} title={`More ${project.categories[0].name} Projects`}><FontAwesomeIcon icon={faForward} /><span className='bottom-link'>More {project.categories[0].name} Projects </span></Link>
+				<Link to={`/posts/categories/${project.categories[0].slug}`} title={`More ${project.categories[0].name} Projects`}><FontAwesomeIcon icon={faForward} /><span className='bottom-link'>More {project.categories[0].name} Projects </span></Link>
 			</div>
 				</>
 			)}
