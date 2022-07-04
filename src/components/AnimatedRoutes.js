@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Hero from './Hero';
-import Projects from './posts/Projects';
-import Category from './posts/Category';
-import ProjectPage from './posts/ProjectPage';
+import Projects from './projects/Projects';
+import Category from './projects/Category';
+import ProjectPage from './projects/ProjectPage';
 import { AnimatePresence } from 'framer-motion';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -16,9 +16,9 @@ const AnimatedRoutes = () => {
 			<AnimatePresence exitBeforeEnter>
 				<Routes location={location} key={location.pathname}>
 					<Route path="/" element={<Hero />} />
-					<Route path="/posts" element={<Projects />} />
-					<Route path="/posts/categories/:categoryName" element={<Category />} />
-					<Route path="/posts/:post" element={<ProjectPage />} />
+					<Route path="/projects" element={<Projects />} />
+					<Route path="/projects/categories/:categoryName" element={<Category />} />
+					<Route path="/projects/:project" element={<ProjectPage />} />
 				</Routes>
 			</AnimatePresence>
 		</QueryClientProvider>

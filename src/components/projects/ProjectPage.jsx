@@ -12,13 +12,13 @@ import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import remarkGemoji from 'remark-gemoji';
 import { faHome, faBackward, faForward } from '@fortawesome/free-solid-svg-icons'
-import '../../scss/projectbody.scss';
+import '../../scss/portfolio/projectbody.scss';
 
 const ProjectPage = () => {
 	let params = useParams();
 
 	const useReactQuery = () => {
-		return useQuery('project', () => getProject(params.post));
+		return useQuery('project', () => getProject(params.project));
 	};
 
 	const { data: project, isLoading } = useReactQuery();
@@ -47,15 +47,15 @@ const ProjectPage = () => {
 				<>
 				<h1>{project.title}</h1>
 			<div className="cat-list">
-				<Link to="/posts">Back to Portfolio</Link>
+				<Link to="/projects">Back to Portfolio</Link>
 				<Categories />
 			</div>
 			<hr />
-			<motion.div className="post" variants={container} initial="hidden" animate="show" exit="exit">
+			<motion.div className="project" variants={container} initial="hidden" animate="show" exit="exit">
 				<h2 id="project-title">{project.title}
 					<span className="title-category">
 						{project.categories.map((cat, index) => (
-					<Link to={`/posts/categories/${cat.slug}`} key={index}>
+					<Link to={`/projects/categories/${cat.slug}`} key={index}>
 						{cat.name}
 					</Link>
 				))}
@@ -97,9 +97,9 @@ const ProjectPage = () => {
 				/>
 			</motion.div>
 			<div className='bottom-nav'>
-				<Link to="/posts" title="Back to Portfolio"><FontAwesomeIcon icon={faBackward} /><span className='bottom-link'>Portfolio</span></Link>
+				<Link to="/projects" title="Back to Portfolio"><FontAwesomeIcon icon={faBackward} /><span className='bottom-link'>Portfolio</span></Link>
 				<Link to="/" title="Home"><FontAwesomeIcon icon={faHome} /><span className='bottom-link'>Home</span></Link>
-				<Link to={`/posts/categories/${project.categories[0].slug}`} title={`More ${project.categories[0].name} Projects`}><FontAwesomeIcon icon={faForward} /><span className='bottom-link'>More {project.categories[0].name} Projects </span></Link>
+				<Link to={`/projects/categories/${project.categories[0].slug}`} title={`More ${project.categories[0].name} Projects`}><FontAwesomeIcon icon={faForward} /><span className='bottom-link'>More {project.categories[0].name} Projects </span></Link>
 			</div>
 				</>
 			)}

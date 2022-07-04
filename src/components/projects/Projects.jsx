@@ -1,6 +1,6 @@
 import React from 'react';
-import { getPosts } from '../../services';
-import '../../scss/posts.scss';
+import { getProjects } from '../../services';
+import '../../scss/portfolio/index.scss';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import Categories from './Categories';
@@ -8,10 +8,10 @@ import { useQuery } from 'react-query';
 
 const Projects = () => {
 	const useReactQuery = () => {
-		return useQuery('posts', () => getPosts());
+		return useQuery('projects', () => getProjects());
 	};
 
-	const { data: posts, isLoading } = useReactQuery();
+	const { data: projects, isLoading } = useReactQuery();
 
 	const container = {
 		hidden: {
@@ -31,18 +31,18 @@ const Projects = () => {
 	return (
 		<motion.div className="projects-page" variants={container} initial="hidden" animate="show" exit="exit">
 			{
-			isLoading && <div>Loading...</div> 
+			isLoading && <div className='loading-div'>Loading...</div> 
 		}
 			{
-				posts && (
+				projects && (
 					<>
 						<h1>Portfolio</h1>
 						<motion.div className="cat-list" variants={container} initial="hidden" animate="show" exit="exit">
 							<Categories />
 						</motion.div>
 
-						<motion.div className="posts" variants={container} initial="hidden" animate="show" exit="exit">
-							{posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)}
+						<motion.div className="projects" variants={container} initial="hidden" animate="show" exit="exit">
+							{projects.map(project => <ProjectCard project={project.node} key={project.node.title} />)}
 						</motion.div>
 					</>
 				)}

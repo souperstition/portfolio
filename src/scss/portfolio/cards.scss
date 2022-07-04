@@ -1,5 +1,5 @@
-@use './variables' as *;
-@use './mixins' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
 
 * {
 	box-sizing: border-box;
@@ -165,7 +165,7 @@
 		gap: 0.5rem;
 		margin-top: 0.5rem;
 	}
-	.post-link {
+	.project-link {
 		font-family: 'Roboto', sans-serif;
 		font-size: 1rem;
 		text-decoration: none;

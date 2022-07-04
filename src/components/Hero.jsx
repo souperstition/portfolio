@@ -53,7 +53,7 @@ const Hero = () => {
 			<h1>what will we dream up today?</h1>
 			<p>I develop stuff for e-learning and the web. Feel free to get in touch or browse my work: </p>
 			<div className="hero-buttons">
-				<Link to="/posts" className="btn">
+				<Link to="/projects" className="btn">
 					See My Projects
 				</Link>
 				<Nav />

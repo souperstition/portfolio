@@ -20,7 +20,7 @@ const Categories = ({ currentCategory }) => {
 						return '';
 					} else {
 						return (
-							<Link to={`/posts/categories/${category.slug}`} key={index}>
+							<Link to={`/projects/categories/${category.slug}`} key={index}>
 								{category.name}
 							</Link>
 						);

@@ -1,8 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import '../../scss/posts.scss';
-import { getCategoryPost } from '../../services';
+import { getCategoryProject } from '../../services';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import Categories from './Categories';
@@ -11,10 +10,10 @@ const Category = () => {
 	let params = useParams();
 
 	const useReactQuery = () => {
-		return useQuery('posts', () => getCategoryPost(params.categoryName));
+		return useQuery('projects', () => getCategoryProject(params.categoryName));
 	};
 
-	const { data: posts, isLoading } = useReactQuery();
+	const { data: projects, isLoading } = useReactQuery();
 
 	const container = {
 		hidden: {
@@ -34,23 +33,23 @@ const Category = () => {
 	return (
 		<motion.div className="projects-page" variants={container} initial="hidden" animate="show" exit="exit">
 			{isLoading && <div className='loading-div'>Loading...</div>}
-			{posts && (
+			{projects && (
 				<>
 				<h1>
 				<span className="category-name">{params.categoryName}</span> Projects
 			</h1>
 			<motion.div className="cat-list" variants={container} initial="hidden" animate="show" exit="exit">
-				<Link to="/posts">Show All</Link>
+				<Link to="/projects">Show All</Link>
 				<Categories currentCategory={params.categoryName} />
 			</motion.div>
 
-			<motion.div className="posts" variants={container} initial="hidden" animate="show" exit="exit">
-				{posts.length === 0 ? (
+			<motion.div className="projects" variants={container} initial="hidden" animate="show" exit="exit">
+				{projects.length === 0 ? (
 					<div className="not-found">
-						That category doesn't exist. <Link to="/posts">Back to Portfolio</Link>
+						That category doesn't exist. <Link to="/projects">Back to Portfolio</Link>
 					</div>
 				) : (
-					posts.map(post => <ProjectCard post={post.node} key={post.node.title} />)
+					projects.map(project => <ProjectCard project={project.node} key={project.node.title} />)
 				)}
 			</motion.div>
 				</>
